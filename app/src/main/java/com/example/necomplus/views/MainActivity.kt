@@ -1,10 +1,9 @@
 package com.example.necomplus.views
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.GeneratedAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +14,7 @@ import com.example.necomplus.utils.configs.ConfigObject
 import com.example.necomplus.viewmodels.ArtistViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity(), TopArtistAdapter.OnTopArtistInteraction {
 
     lateinit var viewModel: ArtistViewModel
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), TopArtistAdapter.OnTopArtistInteractio
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProviders.of(this).get(
+    viewModel = ViewModelProviders.of(this).get(
             ArtistViewModel::class.java
         )
 
@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity(), TopArtistAdapter.OnTopArtistInteractio
             adapter.clear()
             adapter.addAll(sortedList)
         })
-
 
     }
 
